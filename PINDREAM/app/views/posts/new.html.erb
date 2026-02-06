@@ -1,0 +1,9 @@
+<%= form_with model: @note do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :note %>
+  <%= f.text_field :note %>
+  <%= f.date_select :date_dream %>
+  <%= f.submit "Noter" %>
+<% end %>
+<%= link_to "Retour", dreams_path%>

@@ -1,0 +1,9 @@
+<h1><%= @note.title %></h1>
+<p><%= @note.note %></p>
+<i>Reçu le <%= @note.date_dream%></i>
+<%= link_to "Retour", dreams_path%>
+<%= link_to "Modifier", edit_post_path(@note)%>
+<%= link_to "Supprimer", post_path(@note), data: {turbo_method: :delete, turbo_confirm: "Tu veux oublier ce rêve ?"} %>
+<%= link_to favoris_path do %>
+  <% @note.liked ? "Retirer des favoris" : "Mettre en favori" %>
+<%end%>
