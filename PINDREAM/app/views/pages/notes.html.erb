@@ -1,0 +1,13 @@
+<% if @notes.empty?%>
+  <p>Aucun rêve enregistré pour le moment</p>
+<% else %>
+  <% @notes.each do |note| %>
+    <%= link_to post_path(note), note: note do %>
+        <h1><%= note.title %></h1>
+        <i><%= note.date_dream %></i>
+    <%end%>
+  <% end %>
+<% end %>
+<%= link_to "Retenir un rêve", new_post_path%>
+<%= link_to "Retour", root_path%>
+<%= link_to "Voir les rêves épinglés", favoris_path%>

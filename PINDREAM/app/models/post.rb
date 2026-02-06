@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  belongs_to :user
+  validates :title, :date_dream, :note, presence: true
 end

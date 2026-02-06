@@ -1,0 +1,11 @@
+<% if @favoris.empty? %>
+  <p> Aucun rêve est épinglé pour le moment </p>
+<% else %>
+  <% @favoris.each do |favori| %>
+    <%= link_to post_path(favori), note: favori do %>
+        <h1><%= note.title %></h1>
+        <i><%= note.date_dream %></i>
+    <%end%>
+  <% end %>
+<% end %>
+<%= link_to "Retour", dreams_path%>
